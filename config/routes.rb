@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root 'blog_entries#index'
+  resources :blog_entries, only: [:index]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
