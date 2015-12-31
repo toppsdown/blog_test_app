@@ -34,8 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 
 # Gems I've added
-gem 'postgresql'
-
+gem 'postgresql', '~>1.0.0'
 
 ###
 
@@ -52,6 +51,8 @@ group :development, :test do
 
   # Gems I've added
   gem 'pry'
+  gem 'rspec-rails', '~>2.14.2'
+  gem 'annotate', '~>2.6.6'
 
 
   ####
