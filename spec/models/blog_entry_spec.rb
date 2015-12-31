@@ -14,4 +14,18 @@ describe BlogEntry do
       expect(BlogEntry.attribute_names).to match_array(expected_attributes)
     end
   end
+
+  describe 'empty?' do
+    context 'when empty' do
+      it 'returns true' do
+        expect(BlogEntry.new.empty?).to eq(true)
+      end
+    end
+
+    context 'when not empty' do
+      it 'returns false' do
+        expect(BlogEntry.new({title: '1234'}).empty?).to eq(false)
+      end
+    end
+  end
 end

@@ -12,5 +12,11 @@
 
 class BlogEntry < ActiveRecord::Base
   self.table_name = "blog_entries"
+
+  def empty?
+    title.blank? &&
+    body.blank? &&
+    ip.blank?
+  end
 end
 

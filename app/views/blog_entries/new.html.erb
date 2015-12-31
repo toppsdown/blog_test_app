@@ -1,0 +1,18 @@
+<div id="submission">
+  <h2>Submit new blog post</h2>
+  <%= form_for(@entry, url: { action: :create }) do |f| %>
+
+  <div class="field_group">
+  <%= f.label(:title, "Enter title here: ", class: "prompt") %>
+  <%= f.text_field(:title, class: "response") %>
+  </div>
+
+  <div class="field_group">
+  <%= f.label(:body, "Write to your heart's content: ", class: "prompt") %>
+  <%= f.text_area(:body, class: "response") %>
+  </div>
+
+  <%= f.submit %>
+
+  <% end %>
+</div>
