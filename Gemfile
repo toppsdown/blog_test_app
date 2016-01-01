@@ -35,6 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Gems I've added
 gem 'postgresql', '~>1.0.0'
+gem 'devise', '~>3.5.3'
 
 ###
 

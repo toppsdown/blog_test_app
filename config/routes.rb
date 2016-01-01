@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'blog_entries#index'
   resources :blog_entries, only: [:index, :create, :new]
 
