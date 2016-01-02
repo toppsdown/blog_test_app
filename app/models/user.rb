@@ -33,4 +33,5 @@ class User < ActiveRecord::Base
   validates :display_name, presence: true, uniqueness: true
 
   has_many :blog_entries
+  has_many :blog_comments
 end

@@ -19,6 +19,7 @@ class BlogEntry < ActiveRecord::Base
   self.table_name = "blog_entries"
 
   belongs_to :user
+  has_many :blog_comments
 
   def empty?
     title.blank? &&

@@ -31,4 +31,24 @@ describe User, type: :model do
       end
     end
   end
+
+  context 'when creating blog comments' do
+    let(:user) { FactoryGirl.create(:user) }
+    let(:blog_entry) { FactoryGirl.create(:blog_entry, user: user) }
+
+    let(:blog_comment_params) do
+      {
+        body: "This is the body of a comment",
+        blog_entry: blog_entry
+      }
+    end
+
+    it 'creates expected comments' do
+      user.blog_comments.create!(blog_comment_params)
+      user_comments = user.blog_comments
+      expect(user_comments.count).to eq(1)
+      expect(user_comments.first.body).to eq("This is the body of a comment")
+      expect(user_comments.first.blog_entry).to eq(blog_entry)
+    end
+  end
 end
