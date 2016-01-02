@@ -31,4 +31,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :display_name, presence: true, uniqueness: true
+
+  has_many :blog_entries
 end

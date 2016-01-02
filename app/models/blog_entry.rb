@@ -8,10 +8,17 @@
 #  ip         :string
 #  created_at :datetime
 #  updated_at :datetime
+#  user_id    :integer
+#
+# Indexes
+#
+#  index_blog_entries_on_user_id  (user_id)
 #
 
 class BlogEntry < ActiveRecord::Base
   self.table_name = "blog_entries"
+
+  belongs_to :user
 
   def empty?
     title.blank? &&

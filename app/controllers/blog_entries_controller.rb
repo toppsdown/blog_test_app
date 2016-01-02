@@ -7,14 +7,21 @@ class BlogEntriesController < ApplicationController
   end
 
   def new
-    @entry = BlogEntry.new
+    if user_signed_in?
+      @entry = BlogEntry.new
+    else
+      permission_denied
+    end
   end
 
   def create
-    entry = BlogEntry.new(blog_entry_params)
-    entry.save!
+    if user_signed_in?
+      current_user.blog_entries.create(blog_entry_params)
 
-    redirect_to action: "index"
+      redirect_to action: "index"
+    else
+      permission_denied
+    end
   end
 
   private

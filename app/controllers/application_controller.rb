@@ -10,4 +10,9 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) << :display_name
     devise_parameter_sanitizer.for(:account_update) << :display_name
   end
+
+  def permission_denied
+    render :file => "public/401.html", status: :unauthorized
+  end
+
 end

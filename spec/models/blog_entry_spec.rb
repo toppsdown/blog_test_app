@@ -7,7 +7,7 @@ describe BlogEntry do
     end
 
     let(:expected_attributes) do
-      [ "id", "title", "body", "ip", "created_at", "updated_at" ]
+      [ "id", "title", "body", "ip", "created_at", "updated_at", "user_id" ]
     end
 
     it 'responds to expected attributes' do
