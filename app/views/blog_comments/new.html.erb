@@ -1,0 +1,13 @@
+<div id="submission">
+  <h2>Submit new comment to blog post</h2>
+  <%= form_for(@comment, url: { action: :create }) do |f| %>
+
+  <div class="field_group">
+  <%= f.label(:body, "Write your comment here: ", class: "prompt") %>
+  <%= f.text_area(:body, class: "response") %>
+  </div>
+
+  <%= f.submit %>
+
+  <% end %>
+</div>

@@ -8,6 +8,15 @@
     <div class="blog_meta">
       Posted by <span class="name"><%= e.user.display_name %></span> on <span class="date"> <%= e.created_at.to_date %> at <span class="time"><%= e.created_at.strftime("%H:%m:%S") %></span>
     </div>
+    <% e.blog_comments.each do |c| %>
+      <div class="blog_comment">
+        <div class="comment_body"><%= c.body %></div>
+        <div class="comment_author"><%= c.user.display_name %></div>
+      </div>
+    <% end %>
+    <div id="link">
+      <%= link_to("Add Comment", new_blog_entry_blog_comment_path(e)) %>
+    </div>
   </div>
     <% end %>
 </div>
