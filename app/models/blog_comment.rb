@@ -15,4 +15,6 @@ class BlogComment < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :blog_entry
+
+  has_many :likes, as: :likeable
 end

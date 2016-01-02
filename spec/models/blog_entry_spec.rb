@@ -28,4 +28,8 @@ describe BlogEntry do
       end
     end
   end
+
+  describe 'liking' do
+    it 'can be liked'
+  end
 end

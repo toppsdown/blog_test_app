@@ -34,4 +34,5 @@ class User < ActiveRecord::Base
 
   has_many :blog_entries
   has_many :blog_comments
+  has_many :likes
 end

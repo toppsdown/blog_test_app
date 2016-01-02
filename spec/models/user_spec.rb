@@ -51,4 +51,16 @@ describe User, type: :model do
       expect(user_comments.first.blog_entry).to eq(blog_entry)
     end
   end
+
+  context 'when liking as a user' do
+    let(:user) { FactoryGirl.create(:user) }
+    let(:blog_entry) { FactoryGirl.create(:blog_entry) }
+
+    it 'can like' do
+      user.likes.create({likeable: blog_entry})
+
+      expect(blog_entry.likes.count).to eq(1)
+      expect(blog_entry.likes.first.user).to eq(user)
+    end
+  end
 end
