@@ -1,8 +1,13 @@
 
-<h2>List of blog post titles</h2>
-<ul>
+<h2>All blog posts</h2>
+<div id="entry_list">
   <% @entries.each do |e| %>
-    <li><%= e.title %></li>
-  <% end %>
-</ul>
-
+  <div class="blog_entry">
+    <div class="title"><%= e.title %></div>
+    <div class="entry_body"><%= e.body %></div>
+    <div class="blog_meta">
+      Posted by <span class="name"><%= e.user.display_name %></span> on <span class="date"> <%= e.created_at.to_date %> at <span class="time"><%= e.created_at.strftime("%H:%m:%S") %></span>
+    </div>
+  </div>
+    <% end %>
+</div>

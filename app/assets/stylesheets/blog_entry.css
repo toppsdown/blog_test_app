@@ -1,0 +1,26 @@
+#entry_list {
+  width: 500px;
+}
+
+.blog_entry {
+  padding: 20px;
+}
+
+.blog_entry .title {
+  line-height: 24px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: underline;
+  padding-bottom: 5px;
+}
+
+.blog_entry .entry_body {
+  padding: 10px;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+.blog_entry .blog_meta {
+  font-style: italic;
+}

@@ -1,7 +1,7 @@
 class BlogEntriesController < ApplicationController
   def index
     # list blog entries
-    @entries = BlogEntry.all
+    @entries = BlogEntry.order(created_at: :desc)
 
     render :index
   end
